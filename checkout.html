@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Checkout — Eminence 2026 · VIT Vellore</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#4DA8FF;--cloud:#F5FAFF;--coral:#FF6B6B;--purple:#8B7BFF;--dark:#1E2A38;--mid:#2E3D52;--green:#22c55e;--hdr:90px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:#080f1c;overflow-x:hidden;min-height:100vh;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+
+/* ═══ HEADER ═══ */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(8,15,28,0.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(77,168,255,0.15);}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:10px 40px;border-bottom:1px solid rgba(77,168,255,0.08);}
+.logo-area{display:flex;align-items:center;gap:14px;cursor:pointer;}
+.vit-logo{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--purple));display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:900;color:#fff;}
+.logo-text p{font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:2.5px;text-transform:uppercase;}
+.logo-text h2{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:#fff;}
+.secure-badge{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.45);letter-spacing:1px;}
+.secure-badge svg{opacity:0.6;}
+.header-nav{display:flex;align-items:center;justify-content:center;gap:2px;padding:6px 40px;}
+.header-nav a{color:rgba(255,255,255,0.5);font-size:13px;font-weight:500;padding:7px 16px;border-radius:5px;transition:all 0.18s;}
+.header-nav a:hover{color:#fff;background:rgba(77,168,255,0.12);}
+
+/* ═══ PROGRESS BAR ═══ */
+.checkout-progress{background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.06);padding:14px 40px;}
+.progress-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:0;}
+.step{display:flex;align-items:center;gap:10px;flex:1;}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;transition:all 0.3s;}
+.step-num.done{background:var(--green);color:#fff;}
+.step-num.active{background:var(--sky);color:#fff;box-shadow:0 0 14px rgba(77,168,255,0.45);}
+.step-num.pending{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.3);}
+.step-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.3s;}
+.step-label.active{color:rgba(255,255,255,0.9);}
+.step-label.done{color:var(--green);}
+.step-label.pending{color:rgba(255,255,255,0.25);}
+.step-line{flex:1;height:1px;background:rgba(255,255,255,0.08);margin:0 12px;}
+.step-line.done{background:var(--green);}
+
+/* ═══ PAGE BODY ═══ */
+.checkout-body{padding-top:calc(var(--hdr) + 56px);padding-bottom:80px;min-height:100vh;}
+.checkout-layout{max-width:1000px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 380px;gap:36px;align-items:start;}
+
+/* ═══ LEFT COLUMN — FORMS ═══ */
+.form-section{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:34px 36px;margin-bottom:20px;transition:border-color 0.3s;}
+.form-section:focus-within{border-color:rgba(77,168,255,0.25);}
+.form-section-title{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#fff;margin-bottom:6px;display:flex;align-items:center;gap:10px;letter-spacing:0.2px;}
+.form-section-title .fs-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;background:rgba(77,168,255,0.12);}
+.form-section-sub{font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:26px;padding-left:40px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-grid.full{grid-template-columns:1fr;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+.form-group input,
+.form-group select,
+.form-group textarea{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;font-family:'Inter',sans-serif;font-size:14px;color:#fff;outline:none;transition:all 0.2s;appearance:none;}
+.form-group input::placeholder{color:rgba(255,255,255,0.2);}
+.form-group input:focus,
+.form-group select:focus{border-color:rgba(77,168,255,0.5);background:rgba(77,168,255,0.06);box-shadow:0 0 0 3px rgba(77,168,255,0.1);}
+.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.3)' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;cursor:pointer;}
+.form-group select option{background:#1a2a3a;color:#fff;}
+.form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+
+/* Card icons row */
+.card-icons{display:flex;gap:8px;margin-bottom:18px;}
+.card-icon{height:28px;padding:4px 10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:1px;}
+.card-icon.visa{color:#1a71f5;}
+.card-icon.mc{color:#f79e1b;}
+.card-icon.upi{color:#097939;}
+.card-icon.nb{color:var(--sky);}
+
+/* UPI input row */
+.upi-row{display:flex;gap:10px;align-items:center;}
+.upi-row input{flex:1;}
+.upi-verify{background:rgba(77,168,255,0.15);border:1px solid rgba(77,168,255,0.3);color:var(--sky);padding:12px 18px;border-radius:10px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;white-space:nowrap;}
+.upi-verify:hover{background:rgba(77,168,255,0.25);}
+
+/* Payment method tabs */
+.pay-tabs{display:flex;gap:0;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:4px;margin-bottom:24px;}
+.pay-tab{flex:1;padding:10px 8px;border-radius:9px;border:none;background:transparent;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:rgba(255,255,255,0.4);letter-spacing:0.5px;transition:all 0.2s;cursor:pointer;}
+.pay-tab.active{background:rgba(77,168,255,0.18);color:#fff;box-shadow:0 2px 10px rgba(77,168,255,0.15);}
+
+/* Pay panel */
+.pay-panel{display:none;}
+.pay-panel.active{display:block;}
+
+/* ═══ RIGHT COLUMN — ORDER SUMMARY ═══ */
+.order-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:30px;position:sticky;top:calc(var(--hdr) + 80px);}
+.order-title{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#fff;letter-spacing:1px;text-transform:uppercase;margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;}
+.order-badge{font-size:9px;font-weight:600;letter-spacing:2px;color:var(--sky);background:rgba(77,168,255,0.12);padding:3px 10px;border-radius:10px;}
+.order-items{display:flex;flex-direction:column;gap:14px;margin-bottom:20px;}
+.order-item{display:flex;align-items:flex-start;gap:12px;}
+.order-item-thumb{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.order-item-info{flex:1;}
+.order-item-name{font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;line-height:1.3;}
+.order-item-meta{font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.5px;}
+.order-item-price{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;color:#fff;white-space:nowrap;}
+
+/* qty control */
+.qty-row{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.qty-btn{width:22px;height:22px;border-radius:6px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.6);font-size:13px;display:flex;align-items:center;justify-content:center;transition:all 0.15s;cursor:pointer;line-height:1;}
+.qty-btn:hover{background:rgba(77,168,255,0.15);border-color:rgba(77,168,255,0.3);}
+.qty-val{font-size:12px;font-weight:700;color:#fff;min-width:18px;text-align:center;}
+
+.order-divider{height:1px;background:rgba(255,255,255,0.07);margin:16px 0;}
+.order-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.order-row-label{font-size:13px;color:rgba(255,255,255,0.45);}
+.order-row-val{font-size:13px;font-weight:600;color:rgba(255,255,255,0.75);}
+.order-total{display:flex;justify-content:space-between;align-items:center;background:rgba(77,168,255,0.08);border:1px solid rgba(77,168,255,0.2);border-radius:12px;padding:14px 16px;margin-top:16px;margin-bottom:22px;}
+.order-total-label{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#fff;letter-spacing:1px;text-transform:uppercase;}
+.order-total-val{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:var(--sky);}
+
+/* Coupon */
+.coupon-row{display:flex;gap:8px;margin-bottom:20px;}
+.coupon-row input{flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:10px 14px;font-size:13px;color:#fff;outline:none;font-family:'Inter',sans-serif;}
+.coupon-row input::placeholder{color:rgba(255,255,255,0.2);}
+.coupon-row input:focus{border-color:rgba(77,168,255,0.4);}
+.coupon-apply{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 16px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;}
+.coupon-apply:hover{background:rgba(255,255,255,0.1);color:#fff;}
+.coupon-success{display:none;font-size:12px;color:var(--green);font-weight:600;margin-bottom:12px;align-items:center;gap:6px;}
+.coupon-success.show{display:flex;}
+
+/* Pay button */
+.pay-btn{width:100%;padding:16px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--sky),#3a88ee);color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;transition:all 0.22s;cursor:pointer;position:relative;overflow:hidden;}
+.pay-btn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.1),transparent);opacity:0;transition:opacity 0.2s;}
+.pay-btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(77,168,255,0.4);}
+.pay-btn:hover::after{opacity:1;}
+.pay-btn:active{transform:translateY(0);}
+.pay-btn-loading{display:none;width:100%;padding:16px;border-radius:12px;border:none;background:rgba(77,168,255,0.2);color:rgba(255,255,255,0.6);font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;cursor:not-allowed;align-items:center;justify-content:center;gap:10px;}
+.spin{width:18px;height:18px;border:2px solid rgba(255,255,255,0.2);border-top-color:rgba(255,255,255,0.7);border-radius:50%;animation:spin 0.8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.secure-note{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;color:rgba(255,255,255,0.25);margin-top:14px;}
+
+/* ═══ SUCCESS SCREEN ═══ */
+#success-screen{display:none;position:fixed;inset:0;z-index:2000;background:#080f1c;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;}
+#success-screen.show{display:flex;}
+.success-ring{width:100px;height:100px;border-radius:50%;background:rgba(34,197,94,0.12);border:2px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;font-size:42px;margin-bottom:28px;animation:popIn 0.5s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes popIn{from{transform:scale(0.4);opacity:0;}to{transform:scale(1);opacity:1;}}
+.success-title{font-family:'Montserrat',sans-serif;font-size:clamp(28px,5vw,48px);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:12px;}
+.success-sub{font-size:15px;color:rgba(255,255,255,0.5);max-width:480px;line-height:1.7;margin-bottom:10px;}
+.success-ref{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:3px;color:var(--sky);background:rgba(77,168,255,0.1);padding:8px 20px;border-radius:20px;display:inline-block;margin-bottom:36px;}
+.success-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.suc-btn-primary{background:linear-gradient(135deg,var(--sky),#3a88ee);color:#fff;padding:13px 32px;border-radius:10px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;}
+.suc-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(77,168,255,0.35);}
+.suc-btn-ghost{background:transparent;color:rgba(255,255,255,0.6);padding:13px 32px;border-radius:10px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,0.12);transition:all 0.2s;}
+.suc-btn-ghost:hover{border-color:rgba(255,255,255,0.3);color:#fff;}
+
+/* ═══ CONFETTI DOTS ═══ */
+.confetti-dot{position:fixed;width:8px;height:8px;border-radius:2px;pointer-events:none;z-index:3000;animation:fall linear forwards;}
+@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}
+
+/* ═══ MISC ═══ */
+.divider-text{display:flex;align-items:center;gap:12px;margin:18px 0;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:2px;text-transform:uppercase;}
+.divider-text::before,.divider-text::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.07);}
+
+.nb-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.nb-item{background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px 14px;cursor:pointer;transition:all 0.18s;display:flex;align-items:center;gap:10px;}
+.nb-item:hover{border-color:rgba(77,168,255,0.3);background:rgba(77,168,255,0.06);}
+.nb-item.selected{border-color:var(--sky);background:rgba(77,168,255,0.1);}
+.nb-item img{height:20px;object-fit:contain;}
+.nb-item span{font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);}
+
+.wallet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.wallet-item{background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px 10px;cursor:pointer;transition:all 0.18s;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.wallet-item:hover{border-color:rgba(77,168,255,0.3);background:rgba(77,168,255,0.06);}
+.wallet-item.selected{border-color:var(--sky);background:rgba(77,168,255,0.1);}
+.wallet-item .wi-icon{font-size:22px;}
+.wallet-item span{font-size:11px;font-weight:600;color:rgba(255,255,255,0.55);}
+
+.input-icon-wrap{position:relative;}
+.input-icon-wrap input{padding-right:42px;}
+.input-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:16px;pointer-events:none;}
+
+.info-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(77,168,255,0.08);border:1px solid rgba(77,168,255,0.18);border-radius:8px;padding:8px 14px;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:20px;}
+.info-pill strong{color:var(--sky);}
+
+@media(max-width:900px){
+  .checkout-layout{grid-template-columns:1fr;padding:0 20px;}
+  .order-card{position:static;}
+  .header-top,.header-nav{padding:8px 18px;}
+  .checkout-progress{padding:12px 20px;}
+  .form-grid{grid-template-columns:1fr;}
+  .form-row-3{grid-template-columns:1fr 1fr;}
+  .nb-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- SUCCESS SCREEN -->
+<div id="success-screen">
+  <div class="success-ring">✓</div>
+  <div class="success-title">You're All Set!</div>
+  <div class="success-sub" id="success-msg">Your registration is confirmed. A confirmation email has been sent to your inbox. See you at Eminence 2026!</div>
+  <div class="success-ref" id="success-ref">REF: EMN-2026-XXXXXX</div>
+  <div class="success-actions">
+    <a href="index.html" class="suc-btn-primary">Back to Eminence →</a>
+    <a href="events.html" class="suc-btn-ghost">Browse More Events</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="header-top">
+    <a href="index.html" class="logo-area">
+      <div class="vit-logo">VIT</div>
+      <div class="logo-text">
+        <p>Vellore Institute of Technology</p>
+        <h2>Eminence 2026</h2>
+      </div>
+    </a>
+    <div class="secure-badge">
+      <svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M7 1L1 3.5V8C1 11.3 3.6 14.4 7 15C10.4 14.4 13 11.3 13 8V3.5L7 1Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M4.5 8L6.5 10L9.5 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Secure Checkout
+    </div>
+  </div>
+  <nav class="header-nav">
+    <a href="schedule.html">Schedule</a>
+    <a href="events.html">Events</a>
+    <a href="merchandise.html">Merch</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="index.html#contact">Contact Us</a>
+  </nav>
+</header>
+
+<!-- PROGRESS -->
+<div class="checkout-progress">
+  <div class="progress-inner">
+    <div class="step">
+      <div class="step-num done" id="s1">✓</div>
+      <div class="step-label done">Selection</div>
+    </div>
+    <div class="step-line done"></div>
+    <div class="step">
+      <div class="step-num active" id="s2">2</div>
+      <div class="step-label active">Your Details</div>
+    </div>
+    <div class="step-line" id="line2"></div>
+    <div class="step">
+      <div class="step-num pending" id="s3">3</div>
+      <div class="step-label pending" id="sl3">Payment</div>
+    </div>
+    <div class="step-line" id="line3"></div>
+    <div class="step">
+      <div class="step-num pending" id="s4">4</div>
+      <div class="step-label pending" id="sl4">Confirmed</div>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="checkout-body">
+  <div class="checkout-layout">
+
+    <!-- LEFT: FORMS -->
+    <div id="forms-col">
+
+      <!-- Context pill -->
+      <div class="info-pill" id="context-pill" style="margin-bottom:20px;">
+        🎟️ Registering for: <strong id="context-label">Event / Item</strong>
+      </div>
+
+      <!-- STEP 1: Personal Info -->
+      <div class="form-section" id="section-personal">
+        <div class="form-section-title"><div class="fs-icon">👤</div> Personal Information</div>
+        <div class="form-section-sub">Used for your registration confirmation and e-ticket.</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="fname" placeholder="Arjun">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="lname" placeholder="Sharma">
+          </div>
+        </div>
+        <div style="margin-top:14px;" class="form-grid full">
+          <div class="form-group">
+            <label>Email Address</label>
+            <div class="input-icon-wrap">
+              <input type="email" id="email" placeholder="arjun@vit.ac.in">
+              <span class="input-icon">📧</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:14px;" class="form-grid">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91 99999 00000">
+          </div>
+          <div class="form-group">
+            <label>VIT Registration No.</label>
+            <input type="text" id="regno" placeholder="22BCE1234" maxlength="10">
+          </div>
+        </div>
+        <div style="margin-top:14px;" class="form-grid">
+          <div class="form-group">
+            <label>School / Department</label>
+            <select id="dept">
+              <option value="">Select Department</option>
+              <option>School of Computer Science (SCOPE)</option>
+              <option>School of Electronics (SELECT)</option>
+              <option>School of Mechanical (SMEC)</option>
+              <option>School of Civil (SCALE)</option>
+              <option>School of Business (VIT-BS)</option>
+              <option>School of Law (SoL)</option>
+              <option>School of Architecture (SAA)</option>
+              <option>Other / External Participant</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Year of Study</label>
+            <select id="year">
+              <option value="">Select Year</option>
+              <option>1st Year</option>
+              <option>2nd Year</option>
+              <option>3rd Year</option>
+              <option>4th Year</option>
+              <option>5th Year / PG</option>
+              <option>Alumni / External</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: Event/Item Specific -->
+      <div class="form-section" id="section-specific">
+        <div class="form-section-title"><div class="fs-icon">📋</div> <span id="specific-title">Registration Details</span></div>
+        <div class="form-section-sub" id="specific-sub">Additional information for your booking.</div>
+        <div id="specific-fields">
+          <!-- Injected dynamically -->
+        </div>
+      </div>
+
+      <!-- STEP 3: Payment -->
+      <div class="form-section" id="section-payment">
+        <div class="form-section-title"><div class="fs-icon">💳</div> Payment Method</div>
+        <div class="form-section-sub">All transactions are encrypted and secure.</div>
+
+        <div class="card-icons">
+          <div class="card-icon visa">VISA</div>
+          <div class="card-icon mc">MC</div>
+          <div class="card-icon upi">UPI</div>
+          <div class="card-icon nb">NET</div>
+        </div>
+
+        <div class="pay-tabs">
+          <button class="pay-tab active" onclick="switchPay('card',this)">💳 Card</button>
+          <button class="pay-tab" onclick="switchPay('upi',this)">📱 UPI</button>
+          <button class="pay-tab" onclick="switchPay('netbanking',this)">🏦 Net Banking</button>
+          <button class="pay-tab" onclick="switchPay('wallet',this)">👜 Wallet</button>
+        </div>
+
+        <!-- Card -->
+        <div class="pay-panel active" id="panel-card">
+          <div class="form-grid full form-group" style="margin-bottom:14px;">
+            <label>Cardholder Name</label>
+            <input type="text" placeholder="Name as on card">
+          </div>
+          <div class="form-grid full form-group" style="margin-bottom:14px;">
+            <label>Card Number</label>
+            <div class="input-icon-wrap">
+              <input type="text" id="cardnum" placeholder="1234  5678  9012  3456" maxlength="19" oninput="fmtCard(this)">
+              <span class="input-icon" id="card-brand-icon">💳</span>
+            </div>
+          </div>
+          <div class="form-row-3">
+            <div class="form-group" style="grid-column:1/3;">
+              <label>Expiry Date</label>
+              <input type="text" placeholder="MM / YY" maxlength="7" oninput="fmtExpiry(this)">
+            </div>
+            <div class="form-group">
+              <label>CVV</label>
+              <div class="input-icon-wrap">
+                <input type="password" placeholder="•••" maxlength="4">
+                <span class="input-icon" title="3 digits on back of card">🔒</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:16px;display:flex;align-items:center;gap:10px;">
+            <input type="checkbox" id="save-card" style="width:16px;height:16px;accent-color:var(--sky);">
+            <label for="save-card" style="font-size:13px;color:rgba(255,255,255,0.45);cursor:pointer;">Save card for future payments</label>
+          </div>
+        </div>
+
+        <!-- UPI -->
+        <div class="pay-panel" id="panel-upi">
+          <div class="form-group" style="margin-bottom:16px;">
+            <label>UPI ID</label>
+            <div class="upi-row">
+              <input type="text" placeholder="yourname@upi" id="upi-input">
+              <button class="upi-verify" onclick="verifyUPI()">Verify</button>
+            </div>
+          </div>
+          <div id="upi-verified" style="display:none;font-size:12px;color:var(--green);font-weight:600;margin-bottom:14px;display:none;align-items:center;gap:6px;">
+            ✓ UPI ID verified
+          </div>
+          <div class="divider-text">or pay with</div>
+          <div class="wallet-grid">
+            <div class="wallet-item" onclick="selWallet(this,'gpay')"><div class="wi-icon">🅖</div><span>Google Pay</span></div>
+            <div class="wallet-item" onclick="selWallet(this,'phonepe')"><div class="wi-icon">📲</div><span>PhonePe</span></div>
+            <div class="wallet-item" onclick="selWallet(this,'paytm')"><div class="wi-icon">💰</div><span>Paytm</span></div>
+          </div>
+        </div>
+
+        <!-- Net Banking -->
+        <div class="pay-panel" id="panel-netbanking">
+          <div class="form-group" style="margin-bottom:16px;">
+            <label>Select Bank</label>
+            <select>
+              <option value="">Choose your bank</option>
+              <option>State Bank of India</option>
+              <option>HDFC Bank</option>
+              <option>ICICI Bank</option>
+              <option>Axis Bank</option>
+              <option>Kotak Mahindra Bank</option>
+              <option>Punjab National Bank</option>
+              <option>Bank of Baroda</option>
+              <option>Canara Bank</option>
+              <option>Union Bank of India</option>
+              <option>Indian Bank</option>
+              <option>Yes Bank</option>
+              <option>IndusInd Bank</option>
+              <option>Other Bank</option>
+            </select>
+          </div>
+          <div class="nb-grid">
+            <div class="nb-item" onclick="selNB(this)"><span>🏛️ SBI</span></div>
+            <div class="nb-item" onclick="selNB(this)"><span>🏦 HDFC</span></div>
+            <div class="nb-item" onclick="selNB(this)"><span>🏦 ICICI</span></div>
+            <div class="nb-item" onclick="selNB(this)"><span>🏦 Axis</span></div>
+          </div>
+        </div>
+
+        <!-- Wallet -->
+        <div class="pay-panel" id="panel-wallet">
+          <div class="form-group" style="margin-bottom:16px;">
+            <label>Registered Mobile Number</label>
+            <input type="tel" placeholder="+91 99999 00000">
+          </div>
+          <div class="wallet-grid">
+            <div class="wallet-item" onclick="selWallet(this,'paytm2')"><div class="wi-icon">💰</div><span>Paytm Wallet</span></div>
+            <div class="wallet-item" onclick="selWallet(this,'freecharge')"><div class="wi-icon">⚡</div><span>Freecharge</span></div>
+            <div class="wallet-item" onclick="selWallet(this,'mobikwik')"><div class="wi-icon">🪙</div><span>MobiKwik</span></div>
+          </div>
+        </div>
+
+      </div><!-- end payment section -->
+
+    </div><!-- end forms col -->
+
+    <!-- RIGHT: ORDER SUMMARY -->
+    <div>
+      <div class="order-card">
+        <div class="order-title">
+          Order Summary
+          <span class="order-badge" id="order-type-badge">EVENT</span>
+        </div>
+
+        <div class="order-items" id="order-items">
+          <!-- Injected -->
+        </div>
+
+        <div class="order-divider"></div>
+
+        <!-- Coupon -->
+        <div class="coupon-row">
+          <input type="text" id="coupon-input" placeholder="Promo code">
+          <button class="coupon-apply" onclick="applyCoupon()">Apply</button>
+        </div>
+        <div class="coupon-success" id="coupon-ok">✓ Promo applied! You saved <strong id="coupon-save-amt"></strong></div>
+
+        <div class="order-row"><span class="order-row-label">Subtotal</span><span class="order-row-val" id="subtotal-val">₹0</span></div>
+        <div class="order-row" id="discount-row" style="display:none;"><span class="order-row-label" style="color:var(--green);">Discount</span><span class="order-row-val" style="color:var(--green);" id="discount-val">-₹0</span></div>
+        <div class="order-row"><span class="order-row-label">Platform Fee</span><span class="order-row-val">₹10</span></div>
+        <div class="order-row"><span class="order-row-label">GST (18%)</span><span class="order-row-val" id="gst-val">₹0</span></div>
+
+        <div class="order-total">
+          <span class="order-total-label">Total</span>
+          <span class="order-total-val" id="total-val">₹0</span>
+        </div>
+
+        <button class="pay-btn" id="pay-btn" onclick="handlePay()">
+          Pay Securely →
+        </button>
+        <div class="pay-btn-loading" id="pay-loading">
+          <div class="spin"></div> Processing…
+        </div>
+
+        <div class="secure-note">
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M6 1L1 3V7C1 9.8 3.3 12.5 6 13C8.7 12.5 11 9.8 11 7V3L6 1Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          256-bit SSL encrypted · PCI-DSS compliant
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ═══ URL PARAM PARSING ═══
+// Expected: payment.html?type=event&name=Battle+of+Bands&price=299&category=music
+//           payment.html?type=merch&name=Eminence+Cap&price=349
+//           payment.html?type=special&name=Ascend+Night&price=299
+
+const params = new URLSearchParams(window.location.search);
+const TYPE     = params.get('type')     || 'event';   // event | merch | special
+const ITEM_NAME= params.get('name')     || 'Eminence Registration';
+const PRICE    = parseInt(params.get('price') || '299');
+const CATEGORY = params.get('category') || '';
+const SIZE     = params.get('size')     || '';
+const QTY      = parseInt(params.get('qty') || '1');
+
+let qty = QTY;
+let couponApplied = false;
+let couponDiscount = 0;
+
+// ═══ ICONS BY TYPE ═══
+const icons = {
+  event: { emoji: '🎟️', bg: 'rgba(77,168,255,0.12)', badge:'EVENT' },
+  merch: { emoji: '🛍️', bg: 'rgba(255,107,107,0.12)', badge:'MERCH' },
+  special: { emoji: '✦', bg: 'rgba(139,123,255,0.12)', badge:'VIP' },
+};
+const ic = icons[TYPE] || icons.event;
+
+// ═══ CONTEXT PILL ═══
+document.getElementById('context-label').textContent = ITEM_NAME;
+const pilEmoji = TYPE==='merch'?'🛍️': TYPE==='special'?'✦':'🎟️';
+document.getElementById('context-pill').innerHTML = `${pilEmoji} ${TYPE==='merch'?'Purchasing':'Registering for'}: <strong>${ITEM_NAME}</strong>`;
+
+// ═══ ORDER BADGE ═══
+document.getElementById('order-type-badge').textContent = ic.badge;
+
+// ═══ DYNAMIC SPECIFIC FIELDS ═══
+const specificTitle = document.getElementById('specific-title');
+const specificSub   = document.getElementById('specific-sub');
+const specificFields= document.getElementById('specific-fields');
+
+if (TYPE === 'merch') {
+  specificTitle.textContent = 'Product Details';
+  specificSub.textContent   = 'Customise your order before checkout.';
+  specificFields.innerHTML  = `
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Size</label>
+        <select id="merch-size">
+          <option value="">Select Size</option>
+          <option ${SIZE==='XS'?'selected':''}>XS</option>
+          <option ${SIZE==='S'?'selected':''}>S</option>
+          <option ${SIZE==='M'?'selected':''}>M</option>
+          <option ${SIZE==='L'?'selected':''}>L</option>
+          <option ${SIZE==='XL'?'selected':''}>XL</option>
+          <option ${SIZE==='XXL'?'selected':''}>XXL</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Quantity</label>
+        <select id="merch-qty" onchange="updateQty(parseInt(this.value))">
+          <option value="1" ${qty===1?'selected':''}>1</option>
+          <option value="2" ${qty===2?'selected':''}>2</option>
+          <option value="3" ${qty===3?'selected':''}>3</option>
+          <option value="4" ${qty===4?'selected':''}>4</option>
+          <option value="5" ${qty===5?'selected':''}>5</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-grid full form-group" style="margin-top:14px;">
+      <label>Delivery Option</label>
+      <select>
+        <option>Collect at Fest Merch Desk (Free)</option>
+        <option>Courier Delivery (+₹80)</option>
+      </select>
+    </div>
+    <div class="form-grid full form-group" style="margin-top:14px;">
+      <label>Special Instructions (optional)</label>
+      <input type="text" placeholder="Any customisation or notes…">
+    </div>`;
+} else if (TYPE === 'special') {
+  specificTitle.textContent = 'Concert Pass Details';
+  specificSub.textContent   = 'Each pass is valid for one person. Bring your QR code on the day.';
+  specificFields.innerHTML  = `
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Number of Passes</label>
+        <select onchange="updateQty(parseInt(this.value))">
+          <option value="1">1 Pass</option>
+          <option value="2">2 Passes</option>
+          <option value="3">3 Passes</option>
+          <option value="4">4 Passes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Pass Type</label>
+        <select>
+          <option>General Standing (₹299)</option>
+          <option>Premium Seated (₹499)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-grid full form-group" style="margin-top:14px;">
+      <label>Emergency Contact Number</label>
+      <input type="tel" placeholder="+91 00000 00000">
+    </div>`;
+} else {
+  // Event registration
+  specificTitle.textContent = 'Event Registration';
+  specificSub.textContent   = 'Provide details for your team / participation.';
+  specificFields.innerHTML  = `
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Participation Type</label>
+        <select>
+          <option>Solo</option>
+          <option>Team (2–4)</option>
+          <option>Team (5+)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>T-Shirt Size (complimentary)</label>
+        <select>
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-grid full form-group" style="margin-top:14px;">
+      <label>Team Name (if applicable)</label>
+      <input type="text" placeholder="e.g. Team Alpha">
+    </div>
+    <div class="form-grid full form-group" style="margin-top:14px;">
+      <label>Team Members' Reg. Nos. (comma separated)</label>
+      <input type="text" placeholder="22BCE1234, 22BCE5678, …">
+    </div>
+    <div class="form-grid full form-group" style="margin-top:14px;">
+      <label>Dietary / Accessibility Requirements</label>
+      <input type="text" placeholder="e.g. Vegetarian, wheelchair access…">
+    </div>`;
+}
+
+// ═══ ORDER ITEMS ═══
+function renderOrder() {
+  const el = document.getElementById('order-items');
+  const base = PRICE * qty;
+  const gst  = Math.round(base * 0.18);
+  const total= base + gst + 10 - couponDiscount;
+
+  el.innerHTML = `
+    <div class="order-item">
+      <div class="order-item-thumb" style="background:${ic.bg};">${ic.emoji}</div>
+      <div class="order-item-info">
+        <div class="order-item-name">${ITEM_NAME}</div>
+        <div class="order-item-meta">${TYPE==='merch'?'Official Merch · Eminence 2026': TYPE==='special'?'VIP Concert Pass · April 29':'Event Registration · Eminence 2026'}</div>
+        ${TYPE !== 'event' ? `
+        <div class="qty-row">
+          <button class="qty-btn" onclick="updateQty(qty-1)">−</button>
+          <span class="qty-val" id="qty-display">${qty}</span>
+          <button class="qty-btn" onclick="updateQty(qty+1)">+</button>
+        </div>` : ''}
+      </div>
+      <div class="order-item-price">₹${(PRICE*qty).toLocaleString('en-IN')}</div>
+    </div>`;
+
+  document.getElementById('subtotal-val').textContent = '₹'+base.toLocaleString('en-IN');
+  document.getElementById('gst-val').textContent      = '₹'+gst.toLocaleString('en-IN');
+  document.getElementById('total-val').textContent    = '₹'+total.toLocaleString('en-IN');
+}
+renderOrder();
+
+function updateQty(n) {
+  if (n < 1 || n > 10) return;
+  qty = n;
+  // sync any merch-qty select
+  const s = document.getElementById('merch-qty');
+  if (s) s.value = qty;
+  renderOrder();
+}
+
+// ═══ COUPON ═══
+const VALID_COUPONS = { 'EMINENCE10': 10, 'VIT20': 20, 'ASCEND15': 15 };
+function applyCoupon() {
+  const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+  const disc  = VALID_COUPONS[code];
+  if (!disc) {
+    document.getElementById('coupon-input').style.borderColor = 'rgba(255,107,107,0.5)';
+    setTimeout(() => document.getElementById('coupon-input').style.borderColor = '', 1000);
+    return;
+  }
+  const base = PRICE * qty;
+  couponDiscount = Math.round(base * disc / 100);
+  couponApplied  = true;
+  document.getElementById('coupon-ok').classList.add('show');
+  document.getElementById('coupon-save-amt').textContent = '₹'+couponDiscount;
+  document.getElementById('discount-row').style.display  = 'flex';
+  document.getElementById('discount-val').textContent    = '-₹'+couponDiscount;
+  renderOrder();
+}
+
+// ═══ PAY TABS ═══
+function switchPay(panel, btn) {
+  document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.pay-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-'+panel).classList.add('active');
+}
+function selNB(el) { document.querySelectorAll('.nb-item').forEach(i=>i.classList.remove('selected')); el.classList.add('selected'); }
+function selWallet(el) { document.querySelectorAll('.wallet-item').forEach(i=>i.classList.remove('selected')); el.classList.add('selected'); }
+
+// ═══ CARD FORMATTING ═══
+function fmtCard(el) {
+  let v = el.value.replace(/\D/g,'').substring(0,16);
+  el.value = v.replace(/(.{4})/g,'$1  ').trim();
+  const icon = document.getElementById('card-brand-icon');
+  if      (v.startsWith('4'))  icon.textContent = '💙';
+  else if (v.startsWith('5'))  icon.textContent = '🔴';
+  else if (v.startsWith('37')) icon.textContent = '💚';
+  else                          icon.textContent = '💳';
+}
+function fmtExpiry(el) {
+  let v = el.value.replace(/\D/g,'');
+  if (v.length >= 2) v = v.substring(0,2)+' / '+v.substring(2,4);
+  el.value = v;
+}
+
+// ═══ UPI VERIFY ═══
+function verifyUPI() {
+  const v = document.getElementById('upi-input').value.trim();
+  if (!v.includes('@')) { alert('Enter a valid UPI ID (e.g. name@upi)'); return; }
+  const el = document.getElementById('upi-verified');
+  el.style.display = 'flex';
+  el.style.cssText = 'display:flex;font-size:12px;color:var(--green);font-weight:600;margin-bottom:14px;align-items:center;gap:6px;';
+}
+
+// ═══ PROGRESS STEP ═══
+function advanceProgress(step) {
+  if (step >= 3) {
+    document.getElementById('s3').textContent='✓'; document.getElementById('s3').className='step-num done';
+    document.getElementById('sl3').className='step-label done';
+    document.getElementById('line2').className='step-line done';
+  }
+  if (step >= 4) {
+    document.getElementById('s4').textContent='✓'; document.getElementById('s4').className='step-num done';
+    document.getElementById('sl4').className='step-label done';
+    document.getElementById('line3').className='step-line done';
+  }
+}
+
+// ═══ PAY HANDLER ═══
+function handlePay() {
+  const fname = document.getElementById('fname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  if (!fname || !email || !phone) {
+    const s = document.getElementById('section-personal');
+    s.style.borderColor = 'rgba(255,107,107,0.5)';
+    s.scrollIntoView({behavior:'smooth', block:'center'});
+    setTimeout(() => s.style.borderColor = '', 1500);
+    return;
+  }
+
+  advanceProgress(3);
+
+  // Show loading
+  document.getElementById('pay-btn').style.display   = 'none';
+  const loading = document.getElementById('pay-loading');
+  loading.style.display = 'flex';
+
+  // Simulate processing
+  setTimeout(() => {
+    advanceProgress(4);
+    loading.style.display = 'none';
+
+    // Generate ref
+    const ref = 'EMN-2026-' + Math.random().toString(36).substring(2,8).toUpperCase();
+    const msgs = {
+      event:   `Your registration for <strong>${ITEM_NAME}</strong> is confirmed! A confirmation email has been sent to <strong>${email}</strong>. See you at Eminence 2026!`,
+      merch:   `Your order for <strong>${ITEM_NAME}</strong> has been placed! You'll receive a dispatch confirmation at <strong>${email}</strong> within 24 hours.`,
+      special: `Your Ascend Night pass is confirmed! A QR code has been sent to <strong>${email}</strong>. Doors open at 7:30 PM — April 29, 2026.`,
+    };
+    document.getElementById('success-msg').innerHTML = msgs[TYPE] || msgs.event;
+    document.getElementById('success-ref').textContent = ref;
+
+    document.getElementById('success-screen').classList.add('show');
+    fireConfetti();
+  }, 2200);
+}
+
+// ═══ CONFETTI ═══
+function fireConfetti() {
+  const colors = ['#4DA8FF','#FF6B6B','#8B7BFF','#22c55e','#fff','#fbbf24'];
+  for (let i = 0; i < 80; i++) {
+    const d = document.createElement('div');
+    d.className = 'confetti-dot';
+    d.style.left = Math.random()*100 + 'vw';
+    d.style.top  = '-20px';
+    d.style.background = colors[Math.floor(Math.random()*colors.length)];
+    d.style.animationDuration = (1.5 + Math.random()*2.5) + 's';
+    d.style.animationDelay    = (Math.random()*0.8) + 's';
+    d.style.width  = (6+Math.random()*8)+'px';
+    d.style.height = (6+Math.random()*8)+'px';
+    d.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    document.body.appendChild(d);
+    setTimeout(() => d.remove(), 4000);
+  }
+}
+
+// ═══ SCROLL HEADER ═══
+window.addEventListener('scroll', () => {
+  document.getElementById('hdr').style.background = window.scrollY > 40
+    ? 'rgba(4,9,20,0.99)' : 'rgba(8,15,28,0.96)';
+});
+</script>
+</body>
+</html>

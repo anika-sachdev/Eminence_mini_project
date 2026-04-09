@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sponsors — Eminence 2026 · VIT Vellore</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root { --sky:#4DA8FF; --cloud:#F5FAFF; --coral:#FF6B6B; --purple:#8B7BFF; --dark:#1E2A38; --mid:#2E3D52; --hdr:90px; }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--cloud);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(12,24,40,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(77,168,255,0.18);}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:10px 40px;border-bottom:1px solid rgba(77,168,255,0.1);}
+.logo-area{display:flex;align-items:center;gap:14px;cursor:pointer;}
+.vit-logo{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--purple));display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:900;color:#fff;}
+.logo-text p{font-size:10px;color:rgba(255,255,255,0.45);letter-spacing:2.5px;text-transform:uppercase;}
+.logo-text h2{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:#fff;}
+.special-btn{background:var(--coral);color:#fff;padding:9px 22px;border-radius:6px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:background 0.18s,transform 0.18s;}
+.special-btn:hover{background:#e85555;transform:translateY(-1px);}
+.header-nav{display:flex;align-items:center;justify-content:center;gap:2px;padding:6px 40px;}
+.header-nav a{color:rgba(255,255,255,0.65);font-size:13px;font-weight:500;letter-spacing:0.3px;padding:7px 16px;border-radius:5px;transition:all 0.18s;}
+.header-nav a:hover{color:#fff;background:rgba(77,168,255,0.15);}
+.header-nav a.here{color:var(--sky);font-weight:600;}
+.page-hero{padding-top:var(--hdr);min-height:280px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-bottom:50px;}
+.sky-bg-hero{position:absolute;inset:0;background:linear-gradient(180deg,#0c1e35 0%,#0d2e5e 20%,#1255a0 45%,#2a80d4 68%,#5db0f0 85%,#8ecef8 100%);}
+.hero-wm{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Montserrat',sans-serif;font-size:clamp(80px,16vw,180px);font-weight:900;color:rgba(255,255,255,0.06);white-space:nowrap;letter-spacing:20px;pointer-events:none;}
+.hero-inner{position:relative;z-index:2;}
+.hero-eyebrow{font-size:12px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.75);background:rgba(77,168,255,0.16);border:1px solid rgba(77,168,255,0.3);display:inline-block;padding:5px 20px;border-radius:4px;margin-bottom:18px;}
+.hero-h1{font-family:'Montserrat',sans-serif;font-size:clamp(46px,9vw,100px);font-weight:900;color:#fff;letter-spacing:10px;line-height:1;text-shadow:0 3px 50px rgba(0,0,0,0.55);margin-bottom:12px;}
+.hero-sub{font-size:15px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,0.68);}
+.section-eyebrow{font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--sky);margin-bottom:10px;}
+.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(26px,3.5vw,38px);font-weight:800;color:var(--dark);letter-spacing:-0.5px;line-height:1.15;}
+.section-bar{width:46px;height:3px;background:linear-gradient(90deg,var(--sky),var(--purple));border-radius:2px;margin-top:14px;}
+.page-section{padding:90px 60px;background:var(--cloud);}
+.page-section.alt-bg{background:linear-gradient(180deg,#eaf4ff,#f5faff);}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-hdr{margin-bottom:56px;}
+footer{background:#0e1c2c;color:#fff;padding:80px 60px 36px;position:relative;overflow:hidden;}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--purple),var(--coral));}
+.fwm{position:absolute;bottom:14px;right:-14px;font-family:'Montserrat',sans-serif;font-size:110px;font-weight:900;color:rgba(255,255,255,0.025);pointer-events:none;white-space:nowrap;}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+.f-brand h2{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:10px;}
+.f-brand p{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.38);max-width:210px;}
+.f-socials{display:flex;gap:10px;margin-top:18px;}
+.f-social{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:15px;transition:all 0.18s;}
+.f-social:hover{background:rgba(77,168,255,0.2);border-color:rgba(77,168,255,0.4);}
+.f-col h4{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.32);margin-bottom:18px;}
+.f-col a{display:block;font-size:13px;color:rgba(255,255,255,0.58);margin-bottom:10px;transition:color 0.18s;}
+.f-col a:hover{color:var(--sky);}
+.footer-btm{max-width:1100px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;align-items:center;}
+.footer-btm p{font-size:12px;color:rgba(255,255,255,0.26);}
+.footer-btm span{font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,0.18);text-transform:uppercase;}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+@media(max-width:900px){
+  .page-section{padding:70px 24px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .header-top,.header-nav{padding:8px 18px;}
+}
+
+
+.sponsors-intro{font-size:15px;line-height:1.82;color:#4e6072;max-width:560px;margin-bottom:48px;}
+.tier-block{margin-bottom:52px;}
+.tier-label{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;padding:6px 18px;border-radius:20px;}
+.tier-label.platinum{background:rgba(180,190,220,0.18);color:#7890b8;border:1px solid rgba(180,190,220,0.35);}
+.tier-label.gold{background:rgba(255,193,7,0.12);color:#b8860b;border:1px solid rgba(255,193,7,0.3);}
+.tier-label.silver{background:rgba(160,170,180,0.14);color:#7a8896;border:1px solid rgba(160,170,180,0.3);}
+.tier-label.partner{background:rgba(77,168,255,0.1);color:var(--sky);border:1px solid rgba(77,168,255,0.25);}
+.sponsor-row{display:flex;flex-wrap:wrap;gap:14px;}
+.sponsor-card{background:#fff;border:1px solid rgba(77,168,255,0.13);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 2px 14px rgba(77,168,255,0.06);transition:all 0.22s;}
+.sponsor-card:hover{border-color:rgba(77,168,255,0.35);box-shadow:0 8px 30px rgba(77,168,255,0.12);transform:translateY(-3px);}
+.sponsor-card.lg{width:220px;height:100px;}
+.sponsor-card.md{width:170px;height:80px;}
+.sponsor-card.sm{width:140px;height:68px;}
+.sp-logo{font-size:22px;margin-bottom:6px;}
+.sp-name{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:var(--mid);}
+.sp-cat{font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#9aafbf;margin-top:2px;}
+.sponsor-cta-block{margin-top:44px;background:linear-gradient(135deg,#eaf4ff,#dde8ff);border:1px solid rgba(77,168,255,0.22);border-radius:16px;padding:36px 44px;display:flex;align-items:center;justify-content:space-between;}
+.sponsor-cta-block h3{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:var(--dark);margin-bottom:6px;}
+.sponsor-cta-block p{font-size:13px;color:#5a7090;max-width:400px;line-height:1.7;}
+.cta-pill{background:linear-gradient(135deg,var(--sky),var(--purple));color:#fff;padding:12px 28px;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;transition:opacity 0.18s;}
+.cta-pill:hover{opacity:0.88;}
+@media(max-width:700px){.sponsor-cta-block{flex-direction:column;gap:20px;}}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <a href="index.html" class="logo-area">
+      <div class="vit-logo">VIT</div>
+      <div class="logo-text">
+        <p>Vellore Institute of Technology</p>
+        <h2>Eminence 2026</h2>
+      </div>
+    </a>
+    <a href="special.html" class="special-btn">✦ Special Event</a>
+  </div>
+  <nav class="header-nav">
+    <a href="schedule.html">Schedule</a>
+    <a href="events.html">Events</a>
+    <a href="merchandise.html">Merch</a>
+    <a href="sponsors.html" class="here">Sponsors</a>
+    <a href="index.html#contact">Contact Us</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="sky-bg-hero"></div>
+  <div class="hero-wm">SPONSORS</div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Eminence 2026 · Our Partners</div>
+    <div class="hero-h1">SPONSORS</div>
+    <div class="hero-sub">The brands powering Eminence 2026</div>
+  </div>
+</div>
+
+<section class="page-section">
+  <div class="section-inner">
+    <div class="section-hdr reveal">
+      <div class="section-eyebrow">Presented By</div>
+      <div class="section-title">Our Sponsors</div>
+      <div class="section-bar"></div>
+    </div>
+    <p class="sponsors-intro reveal">Eminence 2026 is made possible by our incredible partners who believe in the power of youth, culture, and innovation. We are deeply grateful for their support.</p>
+    <div class="tier-block reveal">
+      <div class="tier-label platinum">🏅 Platinum Sponsors</div>
+      <div class="sponsor-row">
+        <div class="sponsor-card lg"><div class="sp-logo">💡</div><div class="sp-name">TechCorp India</div><div class="sp-cat">Technology</div></div>
+        <div class="sponsor-card lg"><div class="sp-logo">🏦</div><div class="sp-name">Axis Bank</div><div class="sp-cat">Banking Partner</div></div>
+        <div class="sponsor-card lg"><div class="sp-logo">📱</div><div class="sp-name">OnePlus</div><div class="sp-cat">Device Sponsor</div></div>
+      </div>
+    </div>
+    <div class="tier-block reveal">
+      <div class="tier-label gold">🥇 Gold Sponsors</div>
+      <div class="sponsor-row">
+        <div class="sponsor-card md"><div class="sp-logo">🚗</div><div class="sp-name">Hyundai</div><div class="sp-cat">Mobility</div></div>
+        <div class="sponsor-card md"><div class="sp-logo">🍔</div><div class="sp-name">Swiggy</div><div class="sp-cat">Food Partner</div></div>
+        <div class="sponsor-card md"><div class="sp-logo">☁️</div><div class="sp-name">AWS India</div><div class="sp-cat">Cloud Partner</div></div>
+        <div class="sponsor-card md"><div class="sp-logo">🎵</div><div class="sp-name">Spotify</div><div class="sp-cat">Music Partner</div></div>
+      </div>
+    </div>
+    <div class="tier-block reveal">
+      <div class="tier-label silver">🥈 Silver Sponsors</div>
+      <div class="sponsor-row">
+        <div class="sponsor-card sm"><div class="sp-logo">📦</div><div class="sp-name">Amazon</div></div>
+        <div class="sponsor-card sm"><div class="sp-logo">🛵</div><div class="sp-name">Ola</div></div>
+        <div class="sponsor-card sm"><div class="sp-logo">🍕</div><div class="sp-name">Domino's</div></div>
+        <div class="sponsor-card sm"><div class="sp-logo">👟</div><div class="sp-name">Puma</div></div>
+        <div class="sponsor-card sm"><div class="sp-logo">📸</div><div class="sp-name">Nikon</div></div>
+      </div>
+    </div>
+    <div class="tier-block reveal">
+      <div class="tier-label partner">🤝 Media &amp; Community Partners</div>
+      <div class="sponsor-row">
+        <div class="sponsor-card sm"><div class="sp-logo">📰</div><div class="sp-name">The Hindu</div></div>
+        <div class="sponsor-card sm"><div class="sp-logo">📡</div><div class="sp-name">Radio Mirchi</div></div>
+        <div class="sponsor-card sm"><div class="sp-logo">🎬</div><div class="sp-name">YouTube</div></div>
+        <div class="sponsor-card sm"><div class="sp-logo">🌐</div><div class="sp-name">HackerEarth</div></div>
+      </div>
+    </div>
+    <div class="sponsor-cta-block reveal">
+      <div><h3>Want to be a Sponsor?</h3><p>Partner with one of India's largest college cultural festivals. Reach 50,000+ attendees and millions online. Contact our sponsorship team today.</p></div>
+      <a href="index.html#contact" class="cta-pill">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="fwm">EMINENCE</div>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <h2>Eminence</h2>
+      <p>VIT Vellore's premier cultural festival. Three days. Infinite possibilities.</p>
+      <div class="f-socials">
+        <a class="f-social" href="#">📸</a>
+        <a class="f-social" href="#">🐦</a>
+        <a class="f-social" href="#">▶️</a>
+        <a class="f-social" href="#">👤</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Quick Links</h4>
+      <a href="index.html#about">About Fest</a>
+      <a href="events.html">Events</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="merchandise.html">Merchandise</a>
+    </div>
+    <div class="f-col">
+      <h4>More</h4>
+      <a href="sponsors.html">Our Sponsors</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#college">About VIT</a>
+      <a href="special.html">Special Event</a>
+      <a href="faqs.html">FAQs</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="/cdn-cgi/l/email-protection#90f5fdf9fef5fef3f5d0e6f9e4bef1f3bef9fe"><span class="__cf_email__" data-cfemail="94f1f9fdfaf1faf7f1d4e2fde0baf5f7bafdfa">[email&#160;protected]</span></a>
+      <a href="tel:+914162243091">+91 416 224 3091</a>
+      <a href="#">VIT Vellore, Tamil Nadu</a>
+      <a href="#">Pin: 632014, India</a>
+    </div>
+  </div>
+  <div class="footer-btm">
+    <p>© 2026 Eminence — VIT Vellore. All rights reserved.</p>
+    <span>Made with ✦ at VIT</span>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+var ro = new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in');});},{threshold:0.1});
+document.querySelectorAll

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Schedule — Eminence 2026 · VIT Vellore</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root { --sky:#4DA8FF; --cloud:#F5FAFF; --coral:#FF6B6B; --purple:#8B7BFF; --dark:#1E2A38; --mid:#2E3D52; --hdr:90px; }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--cloud);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(12,24,40,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(77,168,255,0.18);}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:10px 40px;border-bottom:1px solid rgba(77,168,255,0.1);}
+.logo-area{display:flex;align-items:center;gap:14px;cursor:pointer;}
+.vit-logo-img{height:52px;width:auto;display:block;filter:brightness(1.05);}
+.logo-text p{font-size:10px;color:rgba(255,255,255,0.45);letter-spacing:2.5px;text-transform:uppercase;}
+.logo-text h2{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:#fff;}
+.special-btn{background:var(--coral);color:#fff;padding:9px 22px;border-radius:6px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:background 0.18s,transform 0.18s;}
+.special-btn:hover{background:#e85555;transform:translateY(-1px);}
+.header-nav{display:flex;align-items:center;justify-content:center;gap:2px;padding:6px 40px;}
+.header-nav a{color:rgba(255,255,255,0.65);font-size:13px;font-weight:500;letter-spacing:0.3px;padding:7px 16px;border-radius:5px;transition:all 0.18s;}
+.header-nav a:hover{color:#fff;background:rgba(77,168,255,0.15);}
+.header-nav a.here{color:var(--sky);font-weight:600;}
+.page-hero{padding-top:var(--hdr);min-height:280px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-bottom:50px;}
+.sky-bg-hero{position:absolute;inset:0;background:linear-gradient(180deg,#0c1e35 0%,#0d2e5e 20%,#1255a0 45%,#2a80d4 68%,#5db0f0 85%,#8ecef8 100%);}
+.hero-wm{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Montserrat',sans-serif;font-size:clamp(80px,16vw,180px);font-weight:900;color:rgba(255,255,255,0.06);white-space:nowrap;letter-spacing:20px;pointer-events:none;}
+.hero-inner{position:relative;z-index:2;}
+.hero-eyebrow{font-size:12px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.75);background:rgba(77,168,255,0.16);border:1px solid rgba(77,168,255,0.3);display:inline-block;padding:5px 20px;border-radius:4px;margin-bottom:18px;}
+.hero-h1{font-family:'Montserrat',sans-serif;font-size:clamp(46px,9vw,100px);font-weight:900;color:#fff;letter-spacing:10px;line-height:1;text-shadow:0 3px 50px rgba(0,0,0,0.55);margin-bottom:12px;}
+.hero-sub{font-size:15px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,0.68);}
+.section-eyebrow{font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--sky);margin-bottom:10px;}
+.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(26px,3.5vw,38px);font-weight:800;color:var(--dark);letter-spacing:-0.5px;line-height:1.15;}
+.section-bar{width:46px;height:3px;background:linear-gradient(90deg,var(--sky),var(--purple));border-radius:2px;margin-top:14px;}
+.page-section{padding:90px 60px;background:var(--cloud);}
+.page-section.alt-bg{background:linear-gradient(180deg,#eaf4ff,#f5faff);}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-hdr{margin-bottom:56px;}
+footer{background:#0e1c2c;color:#fff;padding:80px 60px 36px;position:relative;overflow:hidden;}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--purple),var(--coral));}
+.fwm{position:absolute;bottom:14px;right:-14px;font-family:'Montserrat',sans-serif;font-size:110px;font-weight:900;color:rgba(255,255,255,0.025);pointer-events:none;white-space:nowrap;}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+.f-brand h2{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:10px;}
+.f-brand p{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.38);max-width:210px;}
+.f-socials{display:flex;gap:10px;margin-top:18px;}
+.f-social{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:15px;transition:all 0.18s;}
+.f-social:hover{background:rgba(77,168,255,0.2);border-color:rgba(77,168,255,0.4);}
+.f-col h4{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.32);margin-bottom:18px;}
+.f-col a{display:block;font-size:13px;color:rgba(255,255,255,0.58);margin-bottom:10px;transition:color 0.18s;}
+.f-col a:hover{color:var(--sky);}
+.footer-btm{max-width:1100px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;align-items:center;}
+.footer-btm p{font-size:12px;color:rgba(255,255,255,0.26);}
+.footer-btm span{font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,0.18);text-transform:uppercase;}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+@media(max-width:900px){
+  .page-section{padding:70px 24px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .header-top,.header-nav{padding:8px 18px;}
+}
+
+.day-tabs{display:flex;gap:10px;margin-bottom:40px;flex-wrap:wrap;}
+.day-tab{padding:10px 24px;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.5px;border:1.5px solid rgba(77,168,255,0.25);color:var(--mid);background:#fff;transition:all 0.2s;cursor:pointer;}
+.day-tab:hover{border-color:rgba(77,168,255,0.5);color:var(--sky);}
+.day-tab.on{background:linear-gradient(135deg,var(--sky),var(--purple));border-color:transparent;color:#fff;box-shadow:0 4px 18px rgba(77,168,255,0.28);}
+.schedule-panel{display:none;}.schedule-panel.on{display:block;}
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--sky),var(--purple),var(--coral));border-radius:1px;}
+.tl-item{position:relative;margin-bottom:28px;background:#fff;border-radius:14px;padding:22px 24px;border:1px solid rgba(77,168,255,0.13);box-shadow:0 2px 14px rgba(77,168,255,0.07);transition:box-shadow 0.2s;}
+.tl-item:hover{box-shadow:0 8px 32px rgba(77,168,255,0.13);}
+.tl-dot{position:absolute;left:-28px;top:50%;transform:translateY(-50%);width:14px;height:14px;border-radius:50%;background:var(--sky);border:2.5px solid #fff;box-shadow:0 0 0 3px rgba(77,168,255,0.2);}
+.tl-dot.purple{background:var(--purple);box-shadow:0 0 0 3px rgba(139,123,255,0.2);}
+.tl-dot.coral{background:var(--coral);box-shadow:0 0 0 3px rgba(255,107,107,0.2);}
+.tl-time{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;color:var(--sky);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.tl-title{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+.tl-venue{font-size:12px;color:#8a9fb0;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <a href="index.html" class="logo-area">
+      <img src="VIT_light.png" alt="VIT Logo" class="vit-logo-img">
+      <div class="logo-text">
+        <p>Vellore Institute of Technology</p>
+        <h2>Eminence 2026</h2>
+      </div>
+    </a>
+    <a href="special.html" class="special-btn">&#10086; Special Event</a>
+  </div>
+  <nav class="header-nav">
+    <a href="schedule.html" class="here">Schedule</a>
+    <a href="events.html">Events</a>
+    <a href="merchandise.html">Merch</a>
+    <a href="competitions.html">Competitions</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="index.html#contact">Contact Us</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="sky-bg-hero"></div>
+  <div class="hero-wm">SCHEDULE</div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Eminence 2026 · Three Days</div>
+    <div class="hero-h1">SCHEDULE</div>
+    <div class="hero-sub">April 28 – 29 – 30, 2026</div>
+  </div>
+</div>
+
+<section class="page-section">
+  <div class="section-inner">
+    <div class="section-hdr reveal">
+      <div class="section-eyebrow">April 28 – 30, 2026</div>
+      <div class="section-title">Fest Schedule</div>
+      <div class="section-bar"></div>
+    </div>
+    <div class="day-tabs reveal">
+      <button class="day-tab on" onclick="showDay(0,this)">Day 1 — Apr 28</button>
+      <button class="day-tab"   onclick="showDay(1,this)">Day 2 — Apr 29</button>
+      <button class="day-tab"   onclick="showDay(2,this)">Day 3 — Apr 30</button>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="schedule-panel on" id="day-0"><div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">8:00 AM</div><div class="tl-title">Fest Registration &amp; Check-In</div><div class="tl-venue">Main Block</div></div>
+      <div class="tl-item"><div class="tl-dot coral"></div><div class="tl-time">10:00 AM</div><div class="tl-title">Inauguration Ceremony</div><div class="tl-venue">Anna Auditorium</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">10:00 AM – 1:00 PM</div><div class="tl-title">Canvas Clash — On-Spot Painting</div><div class="tl-venue">KC Lawn</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">10:00 AM</div><div class="tl-title">Hackathon 24H — Kickoff</div><div class="tl-venue">GDN Block</div></div>
+      <div class="tl-item"><div class="tl-dot purple"></div><div class="tl-time">12:00 PM</div><div class="tl-title">Tech Talks — Keynote: AI &amp; Society</div><div class="tl-venue">Main Block</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">2:00 PM – 5:00 PM</div><div class="tl-title">Street Play Festival — Nukkad Natak</div><div class="tl-venue">SMV Portico</div></div>
+      <div class="tl-item"><div class="tl-dot coral"></div><div class="tl-time">6:00 PM – 10:00 PM</div><div class="tl-title">Battle of Bands — Grand Live Music Showdown</div><div class="tl-venue">SJT Lawn</div></div>
+    </div></div>
+
+    <!-- DAY 2 -->
+    <div class="schedule-panel" id="day-1"><div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">9:00 AM – 5:00 PM</div><div class="tl-title">Robo Wars — Combat Robotics</div><div class="tl-venue">PRP Block</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">10:00 AM – 4:00 PM</div><div class="tl-title">Chess Grandmaster Tournament</div><div class="tl-venue">Homi Bhabha Gallery, SJT</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">10:00 AM – 2:00 PM</div><div class="tl-title">Pixel Perfect — Digital Art Challenge</div><div class="tl-venue">SJT Block</div></div>
+      <div class="tl-item"><div class="tl-dot purple"></div><div class="tl-time">12:00 PM</div><div class="tl-title">Hackathon Mid-Review &amp; Mentoring</div><div class="tl-venue">GDN Block</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">2:00 PM – 7:00 PM</div><div class="tl-title">Natyanjali — Classical Dance</div><div class="tl-venue">Channa Reddy Auditorium, TT Tower</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">3:00 PM – 6:00 PM</div><div class="tl-title">Slam Poetry — Spoken Word</div><div class="tl-venue">Bhagat Singh Gallery, SJT</div></div>
+      <div class="tl-item"><div class="tl-dot coral"></div><div class="tl-time">8:00 PM</div><div class="tl-title">Ascend Night — Special Concert Performance</div><div class="tl-venue">KC Lawn</div></div>
+    </div></div>
+
+    <!-- DAY 3 -->
+    <div class="schedule-panel" id="day-2"><div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">9:00 AM</div><div class="tl-title">Hackathon Final Presentations &amp; Demo Day</div><div class="tl-venue">GDN Block</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">10:00 AM – 5:00 PM</div><div class="tl-title">The Grand Debate — British Parliamentary</div><div class="tl-venue">Mahatma Gandhi Block</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">10:00 AM – 6:00 PM</div><div class="tl-title">Futsal Blitz — Knockout Rounds</div><div class="tl-venue">CDMM Block</div></div>
+      <div class="tl-item"><div class="tl-dot purple"></div><div class="tl-time">4:00 PM</div><div class="tl-title">Award Ceremony — All Results</div><div class="tl-venue">Anna Auditorium</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">7:00 PM – 10:00 PM</div><div class="tl-title">Ensemble — Fashion Runway Show</div><div class="tl-venue">Ambedkar Auditorium, SJT</div></div>
+      <div class="tl-item"><div class="tl-dot coral"></div><div class="tl-time">10:00 PM</div><div class="tl-title">Closing Ceremony &amp; DJ Night</div><div class="tl-venue">SMV Portico</div></div>
+    </div></div>
+
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="fwm">EMINENCE</div>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <h2>Eminence</h2>
+      <p>VIT Vellore's premier cultural festival. Three days. Infinite possibilities.</p>
+      <div class="f-socials">
+        <a class="f-social" href="https://www.instagram.com" target="_blank" rel="noopener" title="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f09433"/>
+                <stop offset="50%" stop-color="#dc2743"/>
+                <stop offset="100%" stop-color="#bc1888"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="url(#ig-grad)" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="12" r="4.5" stroke="url(#ig-grad)" stroke-width="2" fill="none"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig-grad)"/>
+          </svg>
+        </a>
+        <!-- X / Twitter -->
+        <a class="f-social" href="https://twitter.com" target="_blank" rel="noopener" title="X (Twitter)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L2.25 2.25h6.983l4.261 5.632 5.75-5.632Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+          </svg>
+        </a>
+        <!-- YouTube -->
+        <a class="f-social" href="https://www.youtube.com" target="_blank" rel="noopener" title="YouTube">
+          <svg width="19" height="14" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.495 2.656A3.016 3.016 0 0 0 21.38.527C19.505 0 12 0 12 0S4.495 0 2.62.527A3.016 3.016 0 0 0 .505 2.656C0 4.542 0 8.5 0 8.5s0 3.958.505 5.844a3.016 3.016 0 0 0 2.115 2.129C4.495 17 12 17 12 17s7.505 0 9.38-.527a3.016 3.016 0 0 0 2.115-2.129C24 12.458 24 8.5 24 8.5s0-3.958-.505-5.844Z" fill="#FF0000"/>
+            <path d="M9.545 12.068 15.818 8.5l-6.273-3.568v7.136Z" fill="white"/>
+          </svg>
+        </a>
+        <!-- Facebook -->
+        <a class="f-social" href="https://www.facebook.com" target="_blank" rel="noopener" title="Facebook">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z" fill="#1877F2"/>
+            <path d="M16.671 15.563l.532-3.49h-3.328v-2.27c0-.955.465-1.885 1.956-1.885h1.513V4.948s-1.374-.235-2.686-.235c-2.742 0-4.533 1.672-4.533 4.697v2.663H7.078v3.49h3.047V24a12.13 12.13 0 0 0 3.75 0v-8.437h2.796Z" fill="white"/>
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a class="f-social" href="https://www.linkedin.com" target="_blank" rel="noopener" title="LinkedIn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a1.983 1.983 0 0 1-1.982-1.982 1.983 1.983 0 0 1 3.964 0 1.983 1.983 0 0 1-1.982 1.982Zm1.762 13.019H3.575V9h3.524v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" fill="#0A66C2"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Quick Links</h4>
+      <a href="index.html#about">About Fest</a>
+      <a href="events.html">Events</a>
+      <a href="competitions.html">Competitions</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="merchandise.html">Merchandise</a>
+    </div>
+    <div class="f-col">
+      <h4>More</h4>
+      <a href="sponsors.html">Our Sponsors</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#college">About VIT</a>
+      <a href="special.html">Special Event</a>
+      <a href="faqs.html">FAQs</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="mailto:eminence@vit.ac.in">eminence@vit.ac.in</a>
+      <a href="tel:+914162243091">+91 416 224 3091</a>
+      <a href="#">VIT Vellore, Tamil Nadu</a>
+      <a href="#">Pin: 632014, India</a>
+    </div>
+  </div>
+  <div class="footer-btm">
+    <p>© 2026 Eminence — VIT Vellore. All rights reserved.</p>
+    <span>Made with &#10086; at VIT</span>
+  </div>
+</footer>
+
+<script>
+var ro = new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in');});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
+window.addEventListener('scroll',function(){
+  document.querySelector('header').style.background=window.scrollY>40?'rgba(8,18,32,0.98)':'rgba(12,24,40,0.92)';
+});
+function showDay(i,b){
+  document.querySelectorAll('.schedule-panel').forEach(function(p){p.classList.remove('on');});
+  document.querySelectorAll('.day-tab').forEach(function(t){t.classList.remove('on');});
+  document.getElementById('day-'+i).classList.add('on');
+  b.classList.add('on');
+}
+</script>
+</body>
+</html>

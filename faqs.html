@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FAQs — Eminence 2026 · VIT Vellore</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root { --sky:#4DA8FF; --cloud:#F5FAFF; --coral:#FF6B6B; --purple:#8B7BFF; --dark:#1E2A38; --mid:#2E3D52; --hdr:90px; }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--cloud);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(12,24,40,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(77,168,255,0.18);}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:10px 40px;border-bottom:1px solid rgba(77,168,255,0.1);}
+.logo-area{display:flex;align-items:center;gap:14px;cursor:pointer;}
+.vit-logo{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--purple));display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:900;color:#fff;}
+.logo-text p{font-size:10px;color:rgba(255,255,255,0.45);letter-spacing:2.5px;text-transform:uppercase;}
+.logo-text h2{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:#fff;}
+.special-btn{background:var(--coral);color:#fff;padding:9px 22px;border-radius:6px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:background 0.18s,transform 0.18s;}
+.special-btn:hover{background:#e85555;transform:translateY(-1px);}
+.header-nav{display:flex;align-items:center;justify-content:center;gap:2px;padding:6px 40px;}
+.header-nav a{color:rgba(255,255,255,0.65);font-size:13px;font-weight:500;letter-spacing:0.3px;padding:7px 16px;border-radius:5px;transition:all 0.18s;}
+.header-nav a:hover{color:#fff;background:rgba(77,168,255,0.15);}
+.header-nav a.here{color:var(--sky);font-weight:600;}
+.page-hero{padding-top:var(--hdr);min-height:280px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-bottom:50px;}
+.sky-bg-hero{position:absolute;inset:0;background:linear-gradient(180deg,#0c1e35 0%,#0d2e5e 20%,#1255a0 45%,#2a80d4 68%,#5db0f0 85%,#8ecef8 100%);}
+.hero-wm{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Montserrat',sans-serif;font-size:clamp(80px,16vw,180px);font-weight:900;color:rgba(255,255,255,0.06);white-space:nowrap;letter-spacing:20px;pointer-events:none;}
+.hero-inner{position:relative;z-index:2;}
+.hero-eyebrow{font-size:12px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.75);background:rgba(77,168,255,0.16);border:1px solid rgba(77,168,255,0.3);display:inline-block;padding:5px 20px;border-radius:4px;margin-bottom:18px;}
+.hero-h1{font-family:'Montserrat',sans-serif;font-size:clamp(46px,9vw,100px);font-weight:900;color:#fff;letter-spacing:10px;line-height:1;text-shadow:0 3px 50px rgba(0,0,0,0.55);margin-bottom:12px;}
+.hero-sub{font-size:15px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,0.68);}
+.section-eyebrow{font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--sky);margin-bottom:10px;}
+.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(26px,3.5vw,38px);font-weight:800;color:var(--dark);letter-spacing:-0.5px;line-height:1.15;}
+.section-bar{width:46px;height:3px;background:linear-gradient(90deg,var(--sky),var(--purple));border-radius:2px;margin-top:14px;}
+.page-section{padding:90px 60px;background:var(--cloud);}
+.page-section.alt-bg{background:linear-gradient(180deg,#eaf4ff,#f5faff);}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-hdr{margin-bottom:56px;}
+footer{background:#0e1c2c;color:#fff;padding:80px 60px 36px;position:relative;overflow:hidden;}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--purple),var(--coral));}
+.fwm{position:absolute;bottom:14px;right:-14px;font-family:'Montserrat',sans-serif;font-size:110px;font-weight:900;color:rgba(255,255,255,0.025);pointer-events:none;white-space:nowrap;}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+.f-brand h2{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:10px;}
+.f-brand p{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.38);max-width:210px;}
+.f-socials{display:flex;gap:10px;margin-top:18px;}
+.f-social{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:15px;transition:all 0.18s;}
+.f-social:hover{background:rgba(77,168,255,0.2);border-color:rgba(77,168,255,0.4);}
+.f-col h4{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.32);margin-bottom:18px;}
+.f-col a{display:block;font-size:13px;color:rgba(255,255,255,0.58);margin-bottom:10px;transition:color 0.18s;}
+.f-col a:hover{color:var(--sky);}
+.footer-btm{max-width:1100px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;align-items:center;}
+.footer-btm p{font-size:12px;color:rgba(255,255,255,0.26);}
+.footer-btm span{font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,0.18);text-transform:uppercase;}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+@media(max-width:900px){
+  .page-section{padding:70px 24px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .header-top,.header-nav{padding:8px 18px;}
+}
+
+
+.faq-list{max-width:760px;}
+.faq-item{background:#fff;border-radius:14px;margin-bottom:12px;border:1px solid rgba(77,168,255,0.13);overflow:hidden;box-shadow:0 2px 12px rgba(77,168,255,0.06);transition:box-shadow 0.2s;}
+.faq-item.open{box-shadow:0 8px 30px rgba(77,168,255,0.12);}
+.faq-q{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;gap:16px;}
+.faq-q-text{font-size:14px;font-weight:600;color:var(--dark);}
+.faq-chevron{flex-shrink:0;transition:transform 0.28s;color:#9aafbf;}
+.faq-item.open .faq-chevron{transform:rotate(180deg);color:var(--sky);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s cubic-bezier(.4,0,.2,1);}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a-inner{padding:0 24px 22px;font-size:14px;line-height:1.82;color:#4e6072;border-top:1px solid rgba(77,168,255,0.1);padding-top:16px;margin:0 24px;}
+.faq-contact-cta{margin-top:40px;display:flex;align-items:center;gap:18px;background:linear-gradient(135deg,#eaf4ff,#dde8ff);border:1px solid rgba(77,168,255,0.22);border-radius:14px;padding:28px 32px;}
+.faq-contact-cta .icon{font-size:28px;}
+.faq-contact-cta h4{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:var(--dark);margin-bottom:4px;}
+.faq-contact-cta p{font-size:13px;color:#5a7090;}
+
+
+.faq-cat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin: 36px 0 14px;
+  padding: 7px 16px;
+  background: rgba(77,168,255,0.08);
+  border-left: 3px solid var(--sky);
+  border-radius: 0 6px 6px 0;
+  display: inline-block;
+}
+.faq-list .faq-cat-label:first-child { margin-top: 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <a href="index.html" class="logo-area">
+      <div class="vit-logo">VIT</div>
+      <div class="logo-text">
+        <p>Vellore Institute of Technology</p>
+        <h2>Eminence 2026</h2>
+      </div>
+    </a>
+    <a href="special.html" class="special-btn">✦ Special Event</a>
+  </div>
+  <nav class="header-nav">
+    <a href="schedule.html">Schedule</a>
+    <a href="events.html">Events</a>
+    <a href="merchandise.html">Merch</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="index.html#contact">Contact Us</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="sky-bg-hero"></div>
+  <div class="hero-wm">FAQs</div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Eminence 2026 · Help &amp; Info</div>
+    <div class="hero-h1">FAQs</div>
+    <div class="hero-sub">Everything you need to know about Eminence 2026</div>
+  </div>
+</div>
+
+<section class="page-section">
+  <div class="section-inner">
+
+    <div class="section-hdr reveal">
+      <div class="section-eyebrow">Got Questions?</div>
+      <div class="section-title">Frequently Asked Questions</div>
+      <div class="section-bar"></div>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-cat-label">🎟️ Registration &amp; Passes</div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Who can attend Eminence 2026?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Eminence 2026 is open to all students from colleges and universities across India. VIT Vellore students get free entry with their student ID. Outstation students and guests can purchase passes at the gate or register online for discounted rates.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How do I register for events and competitions?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Head to the <a href="events.html" style="color:var(--sky);">Events page</a>, browse the event you wish to enter, click "Register", select an available slot, and complete payment through our secure checkout. You will receive a confirmation email with your registration ID — bring this to the venue on the day.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Can I participate in multiple events?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely! There is no limit on the number of events you can register for, as long as timings do not clash. Check the <a href="schedule.html" style="color:var(--sky);">Schedule page</a> carefully before registering for multiple events on the same day.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is the Ascend Night pass included in the general fest pass?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">No. The <a href="special.html" style="color:var(--sky);">Ascend Night</a> 10th Anniversary Concert requires a separate ticket priced at ₹299 per person. Tickets are limited to 2,000 and expected to sell out quickly — register early on the <a href="special.html" style="color:var(--sky);">Special Event page</a>.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What is the refund policy?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Registrations are non-refundable once confirmed. However, if an event is cancelled by the organizers, full refunds will be processed within 7 working days to your original payment method. For team events, the registration can be transferred to another team member free of charge up to 48 hours before the event.</div></div>
+      </div>
+
+      <div class="faq-cat-label">💳 Payments &amp; Checkout</div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What payment methods are accepted?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">We accept all major UPI apps (GPay, PhonePe, Paytm), debit and credit cards (Visa, Mastercard, RuPay), and net banking. All payments are processed through our secure checkout with 256-bit SSL encryption.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is online payment mandatory for event registration?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Paid events require online payment at the time of registration to confirm your slot. Free events can be registered for without any payment. Walk-in registrations may be available at the venue subject to availability, but online registration is strongly recommended to guarantee your spot.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Will I receive a receipt after payment?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Yes! A confirmation email with your unique registration ID and payment receipt will be sent to your email address within minutes of completing checkout. Save this — you'll need it at the venue. If you don't receive it within 30 minutes, check your spam folder or contact us at <strong>eminence@vit.ac.in</strong>.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Can I apply a coupon or discount code at checkout?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Yes, the checkout page has a coupon field. Official discount codes are announced on our Instagram and Twitter pages. VIT students may be eligible for special discount codes — check your college email for an exclusive offer.</div></div>
+      </div>
+
+      <div class="faq-cat-label">🛍️ Merchandise</div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How do I order official Eminence merchandise?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Visit the <a href="merchandise.html" style="color:var(--sky);">Merch Store</a>, click "Add to Bag" on any item, and complete checkout. Pre-ordered merchandise gets a 10% early bird discount and fast-track pickup at the venue stall.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Where can I pick up my pre-ordered merchandise?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Pre-ordered merchandise can be picked up at the Eminence Merch Stall at the Main Campus Gate from April 27–30, 9:00 AM – 8:00 PM daily. Bring your order confirmation ID for fast-track collection. Walk-in purchases are available subject to stock.</div></div>
+      </div>
+
+      <div class="faq-cat-label">🏨 Accommodation &amp; Travel</div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is there accommodation available for outstation participants?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Yes! We have limited hostel accommodation for outstation participants on a first-come, first-served basis. Accommodation packages (3 nights, April 27–30) are available for ₹999/person. Email <strong>eminence@vit.ac.in</strong> with the subject "Accommodation Request" to book.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How do I get to VIT Vellore campus?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">VIT Vellore is located at Katpadi, Vellore, Tamil Nadu — 632014. The nearest railway station is Katpadi Junction (3 km away) and the nearest airport is Chennai International (~140 km). Eminence shuttle buses will run between Katpadi station and campus every 30 minutes during fest days, 7 AM – 11 PM.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is parking available on campus?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Free parking is available in the visitor parking area near the Main Gate. Two-wheelers can park adjacent to the Academic Block. Due to high footfall we recommend using public transport or the Eminence shuttle from Katpadi station.</div></div>
+      </div>
+
+      <div class="faq-cat-label">📋 General</div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What are the fest timings?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Eminence 2026 runs from April 18–20. Gates open at 8:00 AM each day. Most events begin at 9:00 AM. The Ascend Night Concert on April 20 runs until 11:00 PM. See the <a href="schedule.html" style="color:var(--sky);">Schedule page</a> for a full day-by-day breakdown.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What should I bring to the fest?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Bring your college ID, all registration confirmation IDs (screenshot or printout), a valid photo ID (Aadhaar/passport), and cash for food stalls and on-site merch. For performances or technical events, check the specific event rules on the <a href="events.html" style="color:var(--sky);">Events page</a> for any equipment you may need.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is food available at the venue?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Yes! VIT food courts and canteens will be open throughout. There will also be special food stalls by popular vendors — street food, desserts, and regional cuisine — set up in the Fest Zone near the open-air theatre. Swiggy is our food delivery partner with a dedicated drop zone on campus.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Are there any rules or code of conduct?</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">All participants must follow VIT Vellore's campus rules and the Eminence Code of Conduct. Alcohol, drugs, and prohibited items are strictly not allowed on campus. Disruptive behaviour may result in disqualification from events and removal from the premises. The organizing team's decisions are final in all matters.</div></div>
+      </div>
+
+    </div>
+
+    <div class="faq-contact-cta">
+      <div class="icon">💬</div>
+      <div><h4>Still have questions?</h4><p>Reach out at <strong><a href="mailto:eminence@vit.ac.in" style="color:var(--sky);">eminence@vit.ac.in</a></strong> or call <strong>+91 416 224 3091</strong>. We're happy to help!</p></div>
+      <a href="faqs.html">FAQs</a>
+    </div>
+
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="fwm">EMINENCE</div>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <h2>Eminence</h2>
+      <p>VIT Vellore's premier cultural festival. Three days. Infinite possibilities.</p>
+      <div class="f-socials">
+        <a class="f-social" href="#">📸</a>
+        <a class="f-social" href="#">🐦</a>
+        <a class="f-social" href="#">▶️</a>
+        <a class="f-social" href="#">👤</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Quick Links</h4>
+      <a href="index.html#about">About Fest</a>
+      <a href="events.html">Events</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="merchandise.html">Merchandise</a>
+    </div>
+    <div class="f-col">
+      <h4>More</h4>
+      <a href="sponsors.html">Our Sponsors</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#college">About VIT</a>
+      <a href="special.html">Special Event</a>
+      <a href="faqs.html">FAQs</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="/cdn-cgi/l/email-protection#5431393d3a313a373114223d207a35377a3d3a"><span class="__cf_email__" data-cfemail="7a1f1713141f14191f3a0c130e541b19541314">[email&#160;protected]</span></a>
+      <a href="tel:+914162243091">+91 416 224 3091</a>
+      <a href="#">VIT Vellore, Tamil Nadu</a>
+      <a href="#">Pin: 632014, India</a>
+    </div>
+  </div>
+  <div class="footer-btm">
+    <p>© 2026 Eminence — VIT Vellore. All rights reserved.</p>
+    <span>Made with ✦ at VIT</span>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+var ro = new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in');});},{threshold:0.1});
+.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
+window.addEventListener('scroll',function(){
+  document.querySelector('header').style.background=window.scrollY>40?'rgba(8,18,32,0.98)':'rgba(12,24,40,0.92)';
+});
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen){item.classList.add('open');}
+}
+</script>
+</body>
+</html>
