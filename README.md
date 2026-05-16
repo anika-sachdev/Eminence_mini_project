@@ -82,7 +82,7 @@ This portal allows students to explore events, register online, purchase merchan
 
 ---
 
-## ⚙️ How to Run the Project
+## How to Run the Project
 
 1. Download or clone the repository:
 
@@ -91,11 +91,11 @@ This portal allows students to explore events, register online, purchase merchan
    ```
 2. Open `index.html` in your browser
 
-✅ No installation or backend required
+No installation or backend required
 
 ---
 
-## 🔄 Working Flow
+## Working Flow
 
 1. User lands on homepage → views countdown & highlights
 2. Navigates to events → filters & selects event
@@ -105,7 +105,7 @@ This portal allows students to explore events, register online, purchase merchan
 
 ---
 
-## ✅ Advantages
+## Advantages
 
 * No backend required – runs entirely in browser
 * Fast performance (no frameworks)
@@ -115,7 +115,7 @@ This portal allows students to explore events, register online, purchase merchan
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 * No database (data not stored permanently)
 * No real payment gateway
@@ -125,7 +125,7 @@ This portal allows students to explore events, register online, purchase merchan
 
 ---
 
-## 🔮 Future Scope
+## Future Scope
 
 * Backend integration (Node.js / Express + Database)
 * Payment gateway (Razorpay / PayU)
@@ -136,7 +136,7 @@ This portal allows students to explore events, register online, purchase merchan
 
 ---
 
-## 👥 Contributors
+## Contributors
 
 * Mishank Shah
 * Dhruv Menghani
@@ -144,7 +144,7 @@ This portal allows students to explore events, register online, purchase merchan
 
 ---
 
-## 📚 References
+## References
 
 * MDN Web Docs
 * W3Schools
@@ -155,7 +155,7 @@ This portal allows students to explore events, register online, purchase merchan
 
 ---
 
-## 🎯 Conclusion
+## Conclusion
 
 Eminence 2026 demonstrates how a **complete real-world web application** can be built using only front-end technologies.
 It combines UI/UX design, responsiveness, and interactivity to deliver a polished and functional event management system.
